@@ -1,7 +1,8 @@
 # Book_CRUD
 ## Requirements
-- Install PSQL from https://www.postgresql.org/download/
-- Install Node.js from https://nodejs.org/en/download/prebuilt-installer
+- Download and install PSQL from https://www.postgresql.org/download/
+- Download and installnstall Node.js from https://nodejs.org/en/download/prebuilt-installer
+- Download and installnstall VS Code from https://code.visualstudio.com/download
   
 On command prompt type 'psql -U postgres' as postgres is the super admin and type user password.
 ![image](https://github.com/user-attachments/assets/d6caf3f6-ba50-47e9-88f2-8e8dbfdb71d7)
