@@ -4,7 +4,7 @@
 - Download and installnstall Node.js from https://nodejs.org/en/download/prebuilt-installer
 - Download and installnstall VS Code from https://code.visualstudio.com/download
   
-On command prompt type 'psql -U postgres' as postgres is the super admin and type user password.
+On command prompt type 'psql -U postgres' as postgres is the super admin and enter user password.
 ![image](https://github.com/user-attachments/assets/d6caf3f6-ba50-47e9-88f2-8e8dbfdb71d7)
 
 Now create database by copying code from database.sql file. After that run '\c booksecondbind', this will connect to the database and then create database table by copying from same file.
