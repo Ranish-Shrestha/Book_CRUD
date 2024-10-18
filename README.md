@@ -3,7 +3,7 @@
 On command prompt type 'psql -U postgres' as postgres is the super admin and type user password.
 ![image](https://github.com/user-attachments/assets/d6caf3f6-ba50-47e9-88f2-8e8dbfdb71d7)
 
-Now create database by copying code from database.sql file. After that '\c bookseconbind' and create database table by copying from same file.
+Now create database by copying code from database.sql file. After that '\c booksecondbind' and create database table by copying from same file.
 ![image](https://github.com/user-attachments/assets/12a59f30-2af8-4f65-b4f8-18753fdd9afd)
 
 
