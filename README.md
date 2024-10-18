@@ -11,8 +11,6 @@ Now create database by copying code from database.sql file. After that run '\c b
 ![image](https://github.com/user-attachments/assets/12a59f30-2af8-4f65-b4f8-18753fdd9afd)
 
 
-![image](https://github.com/user-attachments/assets/9857e7ef-2d94-4d11-b25f-4c16536aa62a)
-
 On same command prompt type '\l' to get the database table list.
 ![image](https://github.com/user-attachments/assets/75d6fe53-4918-4aa5-b5ae-59b2f76eb797)
 
