@@ -82,9 +82,9 @@ const AddBook = () => {
                         <Form.Label column sm="2">ISBN</Form.Label>
                         <Col sm="10">
                             {/* validates ISBN-10 and ISBN-13 formats */}
-                            <Form.Control name="isbn" type='text' maxLength={20} value={isbn} onChange={(e) => setIsbn(e.target.value)} placeholder="ISBN" pattern="^(97(8|9))?\d{9}(\d|X)$" required />
+                            <Form.Control name="isbn" type='text' maxLength={20} value={isbn} onChange={(e) => setIsbn(e.target.value)} placeholder="ISBN" pattern="^978(-\d{1})?-\d{4}-\d{4}-\d{1}$|^978\d{10}$" required />
                             <Form.Text className="text-muted">
-                                Enter a valid ISBN-10 (e.g., 123456789X) or ISBN-13 (e.g., 9781234567890).
+                                Enter a valid ISBN-13 (e.g., 978-0-7475-3269-9 or 9780747532699).
                             </Form.Text>
                         </Col>
                     </Form.Group>
