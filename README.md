@@ -10,10 +10,6 @@ On command prompt type 'psql -U postgres' as postgres is the super admin and typ
 Now create database by copying code from database.sql file. After that run '\c booksecondbind', this will connect to the database and then create database table by copying from same file.
 ![image](https://github.com/user-attachments/assets/12a59f30-2af8-4f65-b4f8-18753fdd9afd)
 
-
-On same command prompt type '\l' to get the database table list.
-![image](https://github.com/user-attachments/assets/75d6fe53-4918-4aa5-b5ae-59b2f76eb797)
-
 Clone the project by running command git clone https://github.com/Ranish-Shrestha/Book_CRUD.git on command prompt.
 
 Open the project in VS Code.
