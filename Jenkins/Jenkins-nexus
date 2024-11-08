@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        SONARQUBE_SCANNER = tool name: 'SonarQubeScanner'
+        SCANNER_HOME = tool 'SonarQubeScanner'
         NEXUS_VERSION = "nexus3"
         NEXUS_PROTOCOL = "http"
         NODEJS_HOME = tool name: 'NodeJS' // Assumes NodeJS is configured in Jenkins tools
@@ -15,14 +15,6 @@ pipeline {
 
     
     stages {
-        stage('Verify SonarQube Scanner') {
-            steps {
-                script {
-                    echo "SonarQube Scanner location: ${SONARQUBE_SCANNER}"
-                    sh "${SONARQUBE_SCANNER}/bin/sonar-scanner --version"
-                }
-            }
-        }
         stage('Checkout') {
             steps {
                 checkout scm
@@ -46,7 +38,7 @@ pipeline {
                 script {
                     // Run SonarQube analysis for Node.js project
                     sh """
-                         ${SONARQUBE_SCANNER}/bin/sonar-scanner \
+                        ${SCANNER_HOME}/bin/sonar-scanner \
                         -Dsonar.projectKey=My-Project \
                         -Dsonar.projectName="My-Project" \
                         -Dsonar.host.url=http://localhost:9000 \
