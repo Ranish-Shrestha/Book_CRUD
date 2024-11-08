@@ -2,6 +2,7 @@ pipeline {
     agent any
 
     environment {
+        SCANNER_HOME = tool 'sonar-scanner'
         NEXUS_VERSION = "nexus3"
         NEXUS_PROTOCOL = "http"
         NODEJS_HOME = tool name: 'NodeJS' // Assumes NodeJS is configured in Jenkins tools
