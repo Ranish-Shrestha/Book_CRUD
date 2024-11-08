@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        SCANNER_HOME = tool 'sonar-scanner'
+        SONARQUBE_SCANNER = tool name: 'SonarQube Scanner', type: 'ToolLocation'
         NEXUS_VERSION = "nexus3"
         NEXUS_PROTOCOL = "http"
         NODEJS_HOME = tool name: 'NodeJS' // Assumes NodeJS is configured in Jenkins tools
@@ -37,7 +37,7 @@ pipeline {
                 script {
                     // Run SonarQube analysis for Node.js project
                     sh """
-                        sonar-scanner \
+                         ${SONARQUBE_SCANNER}/bin/sonar-scanner \
                         -Dsonar.projectKey=My-Project \
                         -Dsonar.projectName="My-Project" \
                         -Dsonar.host.url=http://localhost:9000 \
