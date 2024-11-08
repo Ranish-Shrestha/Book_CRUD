@@ -34,7 +34,8 @@ pipeline {
         stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv('SonarQube') {
-                    sh 'sonar-scanner -Dsonar.projectKey=book-crud'
+                    def scannerHome = tool name: 'SonarQubeScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'  // Match the name used in Global Tool Configuration
+                    sh '${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=book-crud'
                 }
             }
         }
