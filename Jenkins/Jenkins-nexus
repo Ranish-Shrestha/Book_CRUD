@@ -5,9 +5,9 @@ pipeline {
         NODEJS_HOME = tool name: 'NodeJS' // Assumes NodeJS is configured in Jenkins tools
         PATH = "${NODEJS_HOME}/bin:${env.PATH}"
         SONARQUBE_SERVER = 'SonarQube'  // Name configured for SonarQube in Jenkins
-        NEXUS_URL = 'http://nexus.example.com' // Nexus URL
-        NEXUS_REPO = 'your-nexus-repository-id'
-        NEXUS_CREDENTIALS_ID = 'nexus-credentials-id' // Jenkins credentials ID for Nexus
+        NEXUS_URL = 'http://localhost:8081' // Nexus URL
+        NEXUS_REPO = 'npm-book-repo'
+        NEXUS_CREDENTIALS_ID = 'nexus-user-credentials' // Jenkins credentials ID for Nexus
     }
 
     stages {
