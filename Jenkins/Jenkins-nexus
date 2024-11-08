@@ -2,6 +2,7 @@ pipeline {
     agent any
 
     environment {
+        NEXUS_VERSION = "nexus3"
         NODEJS_HOME = tool name: 'NodeJS' // Assumes NodeJS is configured in Jenkins tools
         PATH = "${NODEJS_HOME}/bin:${env.PATH}"
         SONARQUBE_SERVER = 'SonarQube'  // Name configured for SonarQube in Jenkins
@@ -55,7 +56,7 @@ pipeline {
 
         stage('Deploy to Nexus') {
             steps {
-                nexusVersion: 'nexus3',
+                nexusVersion: NEXUS_VERSION,
                 nexusArtifactUploader artifacts: [
                     [artifactId: 'my-app', classifier: '', file: 'dist/my-app.zip', type: 'zip']
                 ],
