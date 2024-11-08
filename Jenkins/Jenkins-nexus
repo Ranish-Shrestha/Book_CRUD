@@ -33,11 +33,15 @@ pipeline {
 
         stage('SonarQube Analysis') {
             steps {
-                withSonarQubeEnv('SonarQube') {
-                    script {
-                        def scannerHome = tool name: 'SonarQubeScanner'
-                        sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=My-Project"
-                    }
+                script {
+                    // Run SonarQube analysis for Node.js project
+                    sh """
+                        sonar-scanner \
+                        -Dsonar.projectKey=my-weather-app \
+                        -Dsonar.projectName="my-weather-app" \
+                        -Dsonar.host.url=http://localhost:9000 \
+                        -Dsonar.login=squ_1285b37cd202643af862a62667b4edb25a266d3d
+                    """
                 }
             }
         }
