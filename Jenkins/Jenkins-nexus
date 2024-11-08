@@ -56,18 +56,24 @@ pipeline {
 
         stage('Deploy to Nexus') {
             steps {
-                nexusVersion: "${NEXUS_VERSION}",
-                nexusArtifactUploader artifacts: [
-                    [artifactId: 'my-app', classifier: '', file: 'dist/my-app.zip', type: 'zip']
-                ],
-                credentialsId: "${NEXUS_CREDENTIALS_ID}",
-                groupId: 'com.example',
-                nexusUrl: "${NEXUS_URL}",
-                repository: "${NEXUS_REPO}",
-                version: '1.0.0'
+                nexusArtifactUploader(
+                    nexusVersion: "${NEXUS_VERSION}",
+                    artifacts: [
+                        [
+                            artifactId: 'my-app',
+                            classifier: '',
+                            file: 'dist/my-app.zip',
+                            type: 'zip'
+                        ]
+                    ],
+                    credentialsId: "${NEXUS_CREDENTIALS_ID}",
+                    groupId: 'com.example',
+                    nexusUrl: "${NEXUS_URL}",
+                    repository: "${NEXUS_REPO}",
+                    version: '1.0.0'
+                )
             }
         }
-    }
 
     post {
         success {
