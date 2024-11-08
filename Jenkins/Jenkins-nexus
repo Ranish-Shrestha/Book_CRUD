@@ -55,6 +55,7 @@ pipeline {
 
         stage('Deploy to Nexus') {
             steps {
+                nexusVersion: 'nexus3',
                 nexusArtifactUploader artifacts: [
                     [artifactId: 'my-app', classifier: '', file: 'dist/my-app.zip', type: 'zip']
                 ],
