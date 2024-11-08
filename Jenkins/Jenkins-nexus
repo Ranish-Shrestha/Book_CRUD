@@ -33,7 +33,7 @@ pipeline {
         stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv('SonarQube') {
-                    sh 'sonar-scanner -Dsonar.projectKey=my-nodejs-project'
+                    sh 'sonar-scanner -Dsonar.projectKey=book-crud'
                 }
             }
         }
@@ -56,7 +56,7 @@ pipeline {
 
         stage('Deploy to Nexus') {
             steps {
-                nexusVersion: NEXUS_VERSION,
+                nexusVersion: "${NEXUS_VERSION}",
                 nexusArtifactUploader artifacts: [
                     [artifactId: 'my-app', classifier: '', file: 'dist/my-app.zip', type: 'zip']
                 ],
