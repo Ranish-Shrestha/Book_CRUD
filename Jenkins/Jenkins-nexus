@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        SONARQUBE_SCANNER = tool name: 'SonarQube Scanner', type: 'ToolLocation'
+        SONARQUBE_SCANNER = tool name: 'SonarQubeScanner', type: 'ToolLocation'
         NEXUS_VERSION = "nexus3"
         NEXUS_PROTOCOL = "http"
         NODEJS_HOME = tool name: 'NodeJS' // Assumes NodeJS is configured in Jenkins tools
