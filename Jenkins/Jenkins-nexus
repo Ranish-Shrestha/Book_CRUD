@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        SONARQUBE_SCANNER = tool name: 'SonarQubeScanner', type: 'ToolLocation'
+        SONARQUBE_SCANNER = tool name: 'SonarQubeScanner'
         NEXUS_VERSION = "nexus3"
         NEXUS_PROTOCOL = "http"
         NODEJS_HOME = tool name: 'NodeJS' // Assumes NodeJS is configured in Jenkins tools
@@ -13,7 +13,16 @@ pipeline {
         NEXUS_CREDENTIALS_ID = 'nexus-user-credentials' // Jenkins credentials ID for Nexus
     }
 
+    
     stages {
+        stage('Verify SonarQube Scanner') {
+            steps {
+                script {
+                    echo "SonarQube Scanner location: ${SONARQUBE_SCANNER}"
+                    sh "${SONARQUBE_SCANNER}/bin/sonar-scanner --version"
+                }
+            }
+        }
         stage('Checkout') {
             steps {
                 checkout scm
