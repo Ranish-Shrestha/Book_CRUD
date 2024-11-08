@@ -37,8 +37,8 @@ pipeline {
                     // Run SonarQube analysis for Node.js project
                     sh """
                         sonar-scanner \
-                        -Dsonar.projectKey=my-weather-app \
-                        -Dsonar.projectName="my-weather-app" \
+                        -Dsonar.projectKey=My-Project \
+                        -Dsonar.projectName="My-Project" \
                         -Dsonar.host.url=http://localhost:9000 \
                         -Dsonar.login=squ_1285b37cd202643af862a62667b4edb25a266d3d
                     """
